@@ -1,0 +1,295 @@
+<HTML>
+<HEAD>
+<TITLE>kalkulator</TITLE>
+<SCRIPT LANGUAGE='JavaScript'>
+
+var displayText = " "
+var num1
+var num2
+var operatorType
+
+// Write to display
+function addDisplay(n){
+document.calc.display.value = ""
+displayText += n
+document.calc.display.value = displayText
+}
+
+// Addition
+function addNumbers() {
+if (displayText == "") {
+  displayText = result
+ }
+num1 = parseFloat(displayText)
+operatorType = "add"
+displayText = ""
+}
+
+// Subtraction
+function subtractNumbers() {
+if (displayText == "") {
+  displayText = result
+ }
+num1 = parseFloat(displayText)
+operatorType = "subtract"
+displayText = ""
+}
+
+// Multiplication
+function multiplyNumbers() {
+if (displayText == "") {
+  displayText = result
+ }
+num1 = parseFloat(displayText)
+operatorType = "multiply"
+displayText = ""
+}
+
+// Division
+function divideNumbers() {
+if (displayText == "") {
+  displayText = result
+ }
+num1 = parseFloat(displayText)
+operatorType = "divide"
+displayText = ""
+}
+
+// Sine
+function sin() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = Math.sin(num1)
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// Cosine
+function cos() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = Math.cos(num1)
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// ArcSine
+function arcSin() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = Math.asin(num1)
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// ArcCosine
+function arcCos() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = Math.acos(num1)
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// Square root
+function sqrt() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = Math.sqrt(num1)
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// Square number (number to the power of two)
+function square() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = num1 * num1
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// Convert degrees to radians
+function degToRad() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = num1 * Math.PI / 180
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// Convert radians to degrees
+function radToDeg() {
+if (displayText == "") {
+  num1 = result
+  }
+else {
+  num1 = parseFloat(displayText)
+  }
+if (num1 != "") {
+  result = num1 * 180 / Math.PI
+  document.calc.display.value = result
+  displayText = ""
+  }
+else {
+  alert("masukkan angka terlebih dahulu")
+  }
+}
+
+// Calculations
+function calculate() {
+if (displayText != "") {
+  num2 = parseFloat(displayText)
+// Calc: Addition
+  if (operatorType == "add") {
+    result = num1 + num2
+    document.calc.display.value = result
+    }
+// Calc: Subtraction
+  if (operatorType == "subtract") {
+    result = num1 - num2
+    document.calc.display.value = result
+    }
+// Calc: Multiplication
+  if (operatorType == "multiply") {
+    result = num1 * num2
+    document.calc.display.value = result
+    }
+// Calc: Division
+  if (operatorType == "divide") {
+    result = num1 / num2
+    document.calc.display.value = result
+    }
+  displayText = ""
+  }
+  else {
+  document.calc.display.value = "ERROR"
+  }
+}
+
+// Clear the display
+function clearDisplay() {
+displayText = ""
+document.calc.display.value = ""
+}
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#9C6060">
+
+<TABLE>
+<TD> 
+<TABLE BORDER=0 BGCOLOR="#AF9999">
+<TD>
+<TABLE border="0" cellpadding="2" cellspacing="2">
+<FORM NAME=calc>
+
+<!--
+<TR><TD VALIGN=top colspan=6 ALIGN="center"> <H2>Calculator</H2> </TD>
+-->
+<TR>
+	<TD COLSPAN=5><INPUT TYPE=text SIZE=22 NAME=display></TD>
+<TR align="left" valign="middle">
+	<TD><INPUT TYPE=button NAME="one" VALUE="&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;" onClick=addDisplay(1)></TD>
+	<TD><INPUT TYPE=button NAME="two" VALUE="&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;" onClick=addDisplay(2)></TD>
+	<TD><INPUT TYPE=button NAME="three" VALUE="&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;" onClick=addDisplay(3)></TD>
+	<TD><INPUT TYPE=button NAME="plus" VALUE="&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;" onClick=addNumbers()></TD>
+<TR align="left" valign="middle">
+	<TD><INPUT TYPE=button NAME="four" VALUE="&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;" onClick=addDisplay(4)></TD>
+	<TD><INPUT TYPE=button NAME="five" VALUE="&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;" onClick=addDisplay(5)></TD>
+	<TD><INPUT TYPE=button NAME="six" VALUE="&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;" onClick=addDisplay(6)></TD>
+	<TD><INPUT TYPE=button NAME="minus" VALUE="&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;" onClick=subtractNumbers()></TD>
+<TR align="left" valign="middle">
+	<TD><INPUT TYPE=button NAME="seven" VALUE="&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;" onClick=addDisplay(7)></TD>
+	<TD><INPUT TYPE=button NAME="eight" VALUE="&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;" onClick=addDisplay(8)></TD>
+	<TD><INPUT TYPE=button NAME="nine" VALUE="&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;" onClick=addDisplay(9)></TD>
+	<TD><INPUT TYPE=button NAME="multiplication" VALUE="&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;" onClick=multiplyNumbers()></TD>
+<TR align="left" valign="middle">
+	<TD><INPUT TYPE=button NAME="zero" VALUE="&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;" onClick=addDisplay(0)></TD>
+	<TD><INPUT TYPE=button NAME="pi" VALUE = "&nbsp;Pi&nbsp;&nbsp;" onClick=addDisplay(Math.PI)> </TD> 
+	<TD><INPUT TYPE=button NAME="dot" VALUE="&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;" onClick=addDisplay(".")></TD>
+	<TD><INPUT TYPE=button NAME="division" VALUE="&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;" onClick=divideNumbers()></TD>
+<TR align="left" valign="middle">
+	<TD><INPUT TYPE=button NAME="sqareroot" VALUE="sqrt" onClick=sqrt()></TD>
+	<TD><INPUT TYPE=button NAME="squarex" VALUE=" x^2" onClick=square()></TD>
+	<TD><INPUT TYPE=button NAME="deg-rad" VALUE="d2r&nbsp;" onClick=degToRad()></TD>
+	<TD><INPUT TYPE=button NAME="rad-deg" VALUE="r2d&nbsp;" onClick=radToDeg()></TD>
+<TR align="left" valign="middle">
+	<TD><INPUT TYPE=button NAME="sine" VALUE="&nbsp;sin&nbsp;" onClick=sin()></TD>
+	<TD><INPUT TYPE=button NAME="arcsine" VALUE="asin" onClick=arcSin()></TD>
+	<TD><INPUT TYPE=button NAME="cosine" VALUE="cos" onClick=cos()></TD>
+	<TD><INPUT TYPE=button NAME="arccosine" VALUE="acs" onClick=arcCos()></TD>
+
+<TR align="left" valign="middle">
+	<TD COLSPAN=2><INPUT TYPE=button NAME=clear VALUE="&nbsp;&nbsp;Clear&nbsp;&nbsp;" onClick=clearDisplay()></TD>
+	<TD COLSPAN=3><INPUT TYPE=button NAME=enter VALUE="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" onClick=calculate()></TD>
+
+</TABLE>
+</TABLE>
+
+
+</TABLE>
+</BODY>
+</HTML>
